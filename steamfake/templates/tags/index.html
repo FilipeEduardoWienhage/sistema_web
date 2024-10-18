@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Lista de Tag
+      </h1>
+      <a href="/steamfake/tag/cadastro" class="button is-link mb-2 is-pulled-right">
+        <span class="icon is-small">
+          <i class="fas fa-plus"></i>
+        </span> 
+        <span>Nova Tag</span>
+      </a>
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr class="is-link">
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tag in tags %}
+          <tr>
+            <td>{{ tag.pk }}</td>
+            <td>{{ tag.nome }}</td>
+            <td>{{ tag.descricao }}</td>
+            <td>
+                <a href="/steamfake/tag/apagar/{{tag.pk}}">Apagar</a>
+                <a href="/steamfake/tag/editar/{{tag.pk}}">Editar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <script src="https://kit.fontawesome.com/96a844a27d.js" crossorigin="anonymous"></script>
+  </body>
+</html>
