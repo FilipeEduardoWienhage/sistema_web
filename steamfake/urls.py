@@ -17,5 +17,8 @@ urlpatterns = [
     path('tag/apagar/<int:id>', views.tag_apagar),
     path('tag/editar/<int:id>', views.tag_editar),
     path('tag/editado/<int:id>', views.tag_editado),
-
+    path('jogo', views.jogo_index, name="jogos"),
+    path('jogo/cadastro', views.jogo_cadastro),
+    path('jogo/apagar/<int:id>', views.jogo_apagar),
+    path('jogo/editar/<int:id>', views.jogo_editar),
 ]
